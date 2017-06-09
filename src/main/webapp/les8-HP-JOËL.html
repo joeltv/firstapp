@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+ <head> 	
+ <title>Les 8</title>
+ <link rel="stylesheet" type="text/css" href="les8.css">
+ </head>
+ <body>
+	<div id="frame">
+		 <div id="vakantieBestemmingen">	
+		  <h1 id= vakantieTitel>Landen </h1>
+		 <br>
+		 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek landen...">
+		 <table id=countries class="active selectCountries"></table>
+		 <br>
+		 <h1 id= vakantieTitel>Land wijzigen </h1>
+		 <form action="/action_page.php" method="get">
+  			Land: <input type="text" name="land" id="land" value=""><br>
+  			Hoofdstad: <input type="text" name="hoofdtad" id="hoofdstad" value=""><br>
+  			Regio: <input type="text" name="regio" id="regio" value=""><br>
+  			Oppervlakte: <input type="text" name="oppervlakte" id="oppervlakte" value=""><br>
+  			Inwoners: <input type="text" name="inwoners" id="inwoners" value=""><br>
+  			<input type="submit" value="Submit" value="">
+		</form>
+		 </div>
+ 	</div>
+ 	<script src="https://code.jquery.com/jquery-3.2.0.min.js"> </script>	
+ 	<script type="text/javascript">
+ 	$(function (){
+ 		$.getJSON("restservices/countries", function(landen) {
+ 		      var table_body = "<tr><th>Land</th><th>Hoofdstad</th><th>Regio</th><th>Oppervlakte</th><th>Inwoners</th></tr>";
+ 		      var verwijderKnop = "<button type='button' id='verwijderKnop' onclick='verwijderFunctie()' > Verwijderen </button>" 
+ 		      $.each(landen, function(i, country) {
+ 		        table_body += '<tr class="hoverRij"><td>' + country.name + "</td><td>" + country.capital + "</td><td>" + country.region + "</td><td>" + country.surface + "</td><td>" + country.population + "</td><td>" + verwijderKnop + "</td></tr>";		      
+ 		      });
+ 		      $('#countries').html(table_body);	
+ 		      $('#countries').on('click', 'tr', function(){
+ 		    	 $('#countries').on('click', 'tr', function(){
+ 		     	    $('html, body').animate({
+ 		     	        scrollTop: $(document).height()
+ 		     	    }, 'slow');
+ 	 		        console.log();
+ 	 		      	$(this).addClass('selected').siblings().removeClass('selected');    
+		    	   	var landKlik=$(this).find('td:first').html();
+		    	   	var hoofdstadKlik=$(this).find('td + td').html();
+		    	   	var regioKlik=$(this).find('td + td + td').html();
+		    	   	var oppervlakteKlik=$(this).find('td + td + td + td').html();
+		    	   	var inwonersKlik=$(this).find('td + td + td + td + td').html();
+		    	   	console.log(landKlik);    
+ 	 		        document.getElementById("land").value = landKlik;
+ 	 		    	document.getElementById("hoofdstad").value = hoofdstadKlik;
+ 	 				document.getElementById("regio").value = regioKlik;
+		 	 		document.getElementById("oppervlakte").value = oppervlakteKlik;
+		 	 		document.getElementById("inwoners").value = inwonersKlik;
+ 		     	    return false;
+ 		     	});
+ 	 		
+ 	 		   
+ 		        var index = $(this).index();
+ 		        if($('#countries').hasClass("active")) {
+ 		          counter.start();
+ 		          $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + landen[index-1].lat + "&lon=" + landen[index-1].lng + "&APPID=0c6087f0fb2a9655d4ecb2532c6acba1", function(data){
+ 		        	  
+ 		          });
+ 		         };
+ 		      });
+ 		    
+ 		    });
+ 		    
+ 		    function resetCountry() {
+ 		      $('#countries').toggleClass("active");
+ 		    }
+ 		    
+ 		    var counter = new Countdown({  
+ 		        seconds:6,  
+ 		        onUpdateStatus: function(sec){console.log(sec);}, 
+ 		        onCounterEnd: function(){ console.log('Counter is verlopen!');} 
+ 		    });
+ 		    
+ 		    function Countdown(options) {
+ 		      var timer,
+ 		      instance = this,
+ 		      seconds = options.seconds || 10,
+ 		      updateStatus = options.onUpdateStatus || function () {},
+ 		      counterEnd = options.onCounterEnd || function () {};
+
+ 		      function decrementCounter() {
+ 		        updateStatus(seconds);
+ 		        if (seconds === 0) {
+ 		          counterEnd();
+ 		          clearInterval(timer);
+ 		        }
+ 		        seconds--;
+ 		      }
+
+ 		      this.start = function () {
+ 		        clearInterval(timer);
+ 		        timer = 0;
+ 		        seconds = options.seconds;
+ 		        timer = setInterval(decrementCounter, 1000);
+ 		      };
+ 		    }
+ 	});
+ 	function myFunction() {
+ 		  var input, filter, table, tr, td, i;
+ 		  input = document.getElementById("myInput");
+ 		  filter = input.value.toUpperCase();
+ 		  table = document.getElementById("countries");
+ 		  tr = table.getElementsByTagName("tr");
+
+ 		  for (i = 0; i < tr.length; i++) {
+ 		    td = tr[i].getElementsByTagName("td")[0];
+ 		    if (td) {
+ 		      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+ 		        tr[i].style.display = "";
+ 		      } else {
+ 		        tr[i].style.display = "none";
+ 		      }
+ 		    } 
+ 		  }
+ 		}
+ 	function verwijderFunctie() {
+ 	    alert("verwijderd!");
+ 	}
+ 	</script>
+ </body>
+ 

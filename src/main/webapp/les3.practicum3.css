@@ -1,0 +1,98 @@
+#venster{
+background-color: gray;
+margin: 1em;
+padding: 0.5em;
+text-align: center;
+width: 13.5em;
+}
+#display {
+background-color: white;
+height: 1.5em;
+margin: 0.5em;
+padding-right: 0.3em;
+text-align: right;
+}
+button {
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_0{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_1{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_2{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_3{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_4{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_5{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_6{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_7{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#btn_8{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}#btn_9{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#delen{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#vermenigvuldigen{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#optellen{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#aftrekken{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#is{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}
+#clear{
+height: 3.5em;
+margin-bottom: 0.3em;
+width: 3.5em;
+}

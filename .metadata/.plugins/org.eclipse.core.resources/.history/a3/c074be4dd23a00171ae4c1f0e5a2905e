@@ -1,0 +1,20 @@
+package SimpleJDBC;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Domain.Nummer;
+
+public class NummerDAO extends Main {
+	private List<Nummer> selectAddresses(String query) {
+		List<Nummer> results = new ArrayList<Nummer>();
+		
+		try super.main() {
+			Statement stmt = con.createStatement();
+			ResultSet dbResultSet = stmt.executeQuery(query);
+}

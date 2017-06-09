@@ -1,0 +1,53 @@
+2017-05-17 08:09:24,708 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:firstapp:0.0.1-SNAPSHOT @ C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\pom.xml.
+2017-05-17 08:09:28,955 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /firstapp/src/main/java
+2017-05-17 08:09:28,956 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /firstapp/src/test/java
+2017-05-17 08:09:33,263 [Worker-8] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 16 sec
+2017-05-17 08:09:35,219 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:09:35,220 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\main\resources
+2017-05-17 08:09:35,222 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:09:35,223 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\test\resources
+2017-05-17 08:28:49,893 [Worker-31] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:companyexample:1.0 @ D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\pom.xml.
+2017-05-17 08:28:50,679 [Worker-31] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /companyexample/src/main/java
+2017-05-17 08:28:50,679 [Worker-31] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /companyexample/src/main/resources
+2017-05-17 08:28:50,680 [Worker-31] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /companyexample/src/test/java
+2017-05-17 08:28:51,752 [Worker-31] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2017-05-17 08:28:52,891 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:28:52,930 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-17 08:28:52,931 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:28:53,015 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\src\test\resources
+2017-05-17 08:42:47,956 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:42:47,956 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\main\resources
+2017-05-17 08:42:47,958 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 08:42:47,965 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\test\resources
+2017-05-17 09:14:54,306 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:companyexample:1.0 @ D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\pom.xml.
+2017-05-17 09:14:54,306 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:companyexample:1.0 @ D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\pom.xml.
+2017-05-17 09:14:59,173 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:14:59,187 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-17 09:14:59,900 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:companyexample:1.0 @ D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\pom.xml.
+2017-05-17 09:14:59,901 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:14:59,901 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\src\test\resources
+2017-05-17 09:15:00,709 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: nl.hu.v1wac:firstapp:0.0.1-SNAPSHOT @ C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\pom.xml.
+2017-05-17 09:15:02,852 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:15:02,857 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-17 09:15:02,858 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:15:02,859 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\src\test\resources
+2017-05-17 09:15:03,151 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:15:03,151 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\main\resources
+2017-05-17 09:15:03,153 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 09:15:03,153 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\test\resources
+2017-05-17 14:45:23,937 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 14:45:23,948 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-17 14:45:23,951 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 14:45:23,951 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\src\test\resources
+2017-05-17 14:45:26,318 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 14:45:26,319 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\main\resources
+2017-05-17 14:45:26,320 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-17 14:45:26,321 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\test\resources
+2017-05-19 08:42:34,421 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-19 08:42:34,432 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-19 08:42:34,435 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-19 08:42:34,435 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Users\joelt\Downloads\V1WAC-15_les07_companyexample\src\test\resources
+2017-05-19 08:42:36,302 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-19 08:42:36,302 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\main\resources
+2017-05-19 08:42:36,304 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-19 08:42:36,304 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\joelt\OneDrive - Stichting Hogeschool Utrecht\WAC\firstapp\target\m2e-wtp\web-resources\META-INF\maven\nl.hu.v1wac\firstapp\src\test\resources

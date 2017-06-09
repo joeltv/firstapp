@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+ <head> 	
+ <title>Api tester</title>
+ <link rel="stylesheet" type="text/css" href="les5.css">
+ </head>
+<body>
+	<div id="frame">
+		 <div id="myLocation">
+		 <h1>Mijn locatie</h1>
+		 <label id="Landcode">Landcode:<span id=LandcodeSpan></span></label>
+		 <br>
+		 <label id="Land">Land:<span id=LandSpan></span></label>
+		 <br>
+		 <label id="Regio">Regio:<span id=RegioSpan></span></label>
+		 <br>
+		 <label id="Stad">Stad:<span id=StadSpan></span></label>
+		 <br>
+		 <label id="Postcode">Postcode:<span id=PostcodeSpan></span></label>
+		 <br>
+		 <label id="Latitude">Latitude:<span id=LatitudeSpan></span></label>
+		 <br>
+		 <label id="Longitude">Longitude:<span id=LongitudeSpan></span></label>
+		 <br>
+		 <label id="IP">IP:<span id=IPSpan></span></label>
+		 <br>
+		 </div>
+		 <div id="weatherInfo">
+		 <h1 id= plaatsnaam>Het weer in </h1>
+		 <br>
+		 <label id="Temperatuur">Temperatuur:<span id=TemperatuurSpan></span></label>
+		 <br>
+		 <label id="Luchtvochtigheid">Luchtvochtigheid:<span id=LuchtvochtigheidSpan></span></label>
+		 <br>
+		 <label id="Windsnelheid">Windsnelheid:<span id=WindsnelheidSpan></span></label>
+		 <br>
+		 <label id="Windrichting">Windrichting:<span id=WindrichtingSpan></span></label>
+		 <br>
+		 <label id="Zonsopgang">Zonsopgang:<span id=ZonsopgangSpan></span></label>
+		 <br>
+		 <label id="Zonsondergang">Zonsondergang:<span id=ZonsondergangSpan></span></label>
+		 <br>
+		 </div>
+		 <br>
+		 <div id="vakantieBestemmingen">	
+		  <h1 id= vakantieTitel>Beschikbare vakantiebestemmingen </h1>
+		 <br>
+		 <table id=countries class="active selectCountries"></table>
+		 <br>
+		 </div>
+ 	</div>
+ 	<script src="https://code.jquery.com/jquery-3.2.0.min.js"> </script>	
+ 	<script type="text/javascript">
+ 	$(function (){
+ 		$.ajax({	
+ 			url: 'http://ip-api.com/json',
+ 			success: function(locatieGegevens) {
+ 				$("#LandcodeSpan").append(locatieGegevens.countryCode);
+ 				$("#LandSpan").append(locatieGegevens.country);
+ 				$("#RegioSpan").append(locatieGegevens.regionName);
+ 				$("#StadSpan").append(locatieGegevens.city);
+ 				$("#plaatsnaam").append(locatieGegevens.city);
+ 				$("#PostcodeSpan").append(locatieGegevens.zip);
+ 				$("#LatitudeSpan").append(locatieGegevens.lat);
+ 				$("#LongitudeSpan").append(locatieGegevens.lon);
+ 				$("#IPSpan").append(locatieGegevens.query);
+ 				Longi = locatieGegevens.lon
+ 				Lati = locatieGegevens.lat
+ 			},
+ 			async: false	
+ 		});
+ 		function getCardinal(angle) {
+ 	        var directions = 8;
+ 	        
+ 	        var degree = 360 / directions;
+ 	        angle = angle + degree/2;
+ 	        
+ 	        if (angle >= 0 * degree && angle < 1 * degree)
+ 	            return "Noord";
+ 	        if (angle >= 1 * degree && angle < 2 * degree)
+ 	            return "Noordoost";
+ 	        if (angle >= 2 * degree && angle < 3 * degree)
+ 	            return "Oost";
+ 	        if (angle >= 3 * degree && angle < 4 * degree)
+ 	            return "Zuidoost";
+ 	        if (angle >= 4 * degree && angle < 5 * degree)
+ 	            return "Zuid";
+ 	        if (angle >= 5 * degree && angle < 6 * degree)
+ 	            return "Zuidwest";
+ 	        if (angle >= 6 * degree && angle < 7 * degree)
+ 	            return "West";
+ 	        if (angle >= 7 * degree && angle < 8 * degree)
+ 	            return "Noordwest";
+ 	    }
+ 		 function epochToJsDate(ts){
+ 			 var d = Date(ts*1000)
+ 			 var h = new Date(ts*1000).getHours()
+ 			 var m = new Date(ts*1000).getMinutes()
+ 			 var s = new Date(ts*1000).getSeconds()
+ 	        return h + ":" + m + ":" + s;
+ 	   }
+ 		$.ajax({
+ 			url: "http://api.openweathermap.org/data/2.5/weather?lat="+Lati+"&lon="+Longi+"&APPID=a4edf591292b2c14a0ec05aae453de0a",
+ 			success: function(weerGegevens) {
+ 				$("#TemperatuurSpan").append((weerGegevens.main.temp-273.15) + " °C");
+ 				$("#LuchtvochtigheidSpan").append(weerGegevens.main.humidity + '%');
+ 				$("#WindsnelheidSpan").append((weerGegevens.wind.speed * 3,6) + " km/u");
+ 				$("#WindrichtingSpan").append(getCardinal(weerGegevens.wind.deg));
+ 				$("#ZonsopgangSpan").append(epochToJsDate(weerGegevens.sys.sunrise));
+ 				$("#ZonsondergangSpan").append(epochToJsDate(weerGegevens.sys.sunset));
+ 			} 		
+ 		});	
+ 		$.getJSON("restservices/countries", function(landen) {
+ 		      var table_body = "<tr><th>Land</th><th>Hoofdstad</th><th>Regio</th><th>Oppervlakte</th><th>Inwoners</th></tr>";
+ 		      $.each(landen, function(i, country) {
+ 		        table_body += '<tr class="hoverRij"><td>' + country.name + "</td><td>" + country.capital + "</td><td>" + country.region + "</td><td>" + country.surface + "</td><td>" + country.population + "</td></tr>";
+ 		      
+ 		      });
+ 		      $('#countries').html(table_body);
+ 		      $('#countries').on('click', 'tr', function(){
+ 		        console.log();
+ 		        var index = $(this).index();
+ 		        if($('#countries').hasClass("active")) {
+ 		          counter.start();
+ 		          $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + landen[index-1].lat + "&lon=" + landen[index-1].lng + "&APPID=0c6087f0fb2a9655d4ecb2532c6acba1", function(data){
+ 		            alert('Het weer in '+ landen[index-1].name + " is " + (data.main.temp - 273,15) + " graden");
+ 		            var landInfo = data;
+ 		            localStorage.setItem("landInfo", landInfo);
+ 		            $('#countries').toggleClass("active");
+ 		            console.log("wacht 10 min voor volgend land " + window.localStorage);
+ 		            setTimeout(resetCountry, 6000);
+ 		          });
+ 		         };
+ 		      });
+ 		    
+ 		    });
+ 		    
+ 		    function resetCountry() {
+ 		      $('#countries').toggleClass("active");
+ 		    }
+ 		    
+ 		    var counter = new Countdown({  
+ 		        seconds:6,  
+ 		        onUpdateStatus: function(sec){console.log(sec);}, 
+ 		        onCounterEnd: function(){ console.log('Counter is verlopen!');} 
+ 		    });
+ 		    
+ 		    function Countdown(options) {
+ 		      var timer,
+ 		      instance = this,
+ 		      seconds = options.seconds || 10,
+ 		      updateStatus = options.onUpdateStatus || function () {},
+ 		      counterEnd = options.onCounterEnd || function () {};
+
+ 		      function decrementCounter() {
+ 		        updateStatus(seconds);
+ 		        if (seconds === 0) {
+ 		          counterEnd();
+ 		          clearInterval(timer);
+ 		        }
+ 		        seconds--;
+ 		      }
+
+ 		      this.start = function () {
+ 		        clearInterval(timer);
+ 		        timer = 0;
+ 		        seconds = options.seconds;
+ 		        timer = setInterval(decrementCounter, 1000);
+ 		      };
+ 		    }
+ 	});
+ 
+
+ 	</script>
+ </body>
+ 

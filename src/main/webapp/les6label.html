@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+ <title>Label</title>
+ <body>
+  	<label id="synclabel"> </label>
+  	
+  	 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  	 <script type= "text/javascript"> 
+  	 	window.addEventListener('storage', function(event){
+  	 		console.log("iets");
+  	 		$('#synclabel').html(window.localStorage.getItem('text'));
+  	 	});
+  	 </script>
+ </body>
+</html>

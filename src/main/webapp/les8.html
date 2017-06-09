@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+ <head> 	
+ <title>Les 8</title>
+ <link rel="stylesheet" type="text/css" href="les8.css">
+ </head>
+ <body>
+	<div id="frame">
+		 <div id="vakantieBestemmingen">	
+		  <h1 id= vakantieTitel>Landen </h1>
+		  <p>Klik op een land om de gegevens aan te passen</p>
+		  <a href="#bottom" id="hulk" onclick=naarBeneden()>Klik hier om een land toe te voegen</a>
+		 <br>
+		 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek landen...">
+		 <table id=countries class="active selectCountries"></table>
+		 <br>
+		 <div id="Land wijzigen">
+		 <h1 id= vakantieTitel>Land wijzigen </h1>
+		 <form id="landInfo" action="/action_page.php" method="get">
+		 	Iso3Code: <input type="text" name="iso3" id="iso3" value="" size=100 readonly><br>
+		 	Iso2Code: <input type="text" name="iso2" id="iso2" value="" size=100><br>
+  			Land: <input type="text" name="land" id="land" value="" size=100><br>
+  			Hoofdstad: <input type="text" name="hoofdtad" id="hoofdstad" value="" size=100><br>
+  			Regio: <input type="text" name="regio" id="regio" value="" size=100><br>
+  			Continent: <input type="text" name="continent" id="continent" value="" size=100><br>
+  			Oppervlakte: <input type="text" name="oppervlakte" id="oppervlakte" value="" size=100><br>
+  			Onafhankelijkheidsjaar: <input type="text" name="onafhankelijkheidsjaar" id="onafhankelijkheidsjaar" value="" size=100><br>
+  			Inwoners: <input type="text" name="inwoners" id="inwoners" value="" size=100><br>
+  			Levensverwachting: <input type="text" name="levensverwachting" id="levensverwachting" value="" size=100><br>
+  			GNP: <input type="text" name="GNP" id="GNP" value="" size=100><br>
+  			GNP-Oud: <input type="text" name="GNPOud" id="GNPOud" value="" size=100><br>
+  			Lokale naam: <input type="text" name="lokalenaam" id="lokalenaam" value="" size=100><br>
+  			Regeringsvorm: <input type="text" name="regeringsvorm" id="regeringsvorm" value="" size=100><br>
+  			Hoofd van Land: <input type="text" name="hoofd" id="hoofd" value="" size=100><br>
+  			Latitude: <input type="text" name="latitude" id="latitude" value="" size=100><br>
+  			Longitude: <input type="text" name="longitude" id="longitude" value="" size=100><br>
+  			<input type="button" value="Submit" value="" onclick=wijzigFunctie()>
+		</form>
+		</div>
+		<h1 id= vakantieTitel>Land toevoegen </h1>
+		<form id="inputForm">
+					<div id="inputFields">
+						Iso3Code: <input type="text" name="Iso3Input" id="Iso3Input" value="" size=100><br>
+						Iso2Code: <input type="text" name="Iso2Input" id="Iso2Input" value="" size=100><br>
+						Land: <input type="text" name="landInput" id="landInput" value="" size=100><br>
+  						Hoofdstad: <input type="text" name="hoofdtadInput" id="hoofdstadInput" value="" size=100><br>
+  						Regio: <input type="text" name="regioInput" id="regioInput" value="" size=100><br>
+  						Continent: <input type="text" name="continentInput" id="continentInput" value="" size=100><br>
+  						Oppervlakte: <input type="text" name="oppervlakteInput" id="oppervlakteInput" value="" size=100><br>
+  						Onafhankelijkheidsjaar: <input type="text" name="onafhankelijkheidsjaarInput" id="onafhankelijkheidsjaarInput" value="" size=100><br>
+  						Inwoners: <input type="text" name="inwonersInput" id="inwonersInput" value="" size=100><br>
+  						Levensverwachting: <input type="text" name="levensverwachtingInput" id="levensverwachtingInput" value="" size=100><br>
+  						GNP: <input type="text" name="GNPInput" id="GNPInput" value="" size=100><br>
+  						GNP-Oud: <input type="text" name="GNPOudInput" id="GNPOudInput" value="" size=100><br>
+  						Lokale naam: <input type="text" name="LokaleNaamInput" id="LokaleNaamInput" value="" size=100><br>
+  						Regeringsvorm: <input type="text" name="RegeringsvormInput" id="RegeringsvormInput" value="" size=100><br>
+  						Hoofd van Land: <input type="text" name="HoofdInput" id="HoofdInput" value="" size=100><br>
+  						Latitude: <input type="text" name="LatitudeInput" id="LatitudeInput" value="" size=100><br>
+  						Longitude: <input type="text" name="LongitudeInput" id="LongitudeInput" value="" size=100><br>
+  						<input type="button" value="Submit" value="" onclick="toevoegFunctie();window.location.reload();">
+					</div>
+				</form>
+		</div>
+ 	</div>
+ 	<script src="https://code.jquery.com/jquery-3.2.0.min.js"> </script>	
+ 	<script type="text/javascript">
+ 	var dezeWel = "Deze Wel"
+ 	var qryLanden = "";
+ 	$(function (){
+ 		$.getJSON("restservices/countries", function(landen) {
+ 		 	var table_body = "<tr><th>Iso3Code</th><th>Land</th><th>Hoofdstad</th><th>Regio</th><th>Oppervlakte</th><th>Inwoners</th></tr>";
+ 		 	qryLanden = landen;
+ 		    var verwijderKnop = "<button type='button' id='verwijderKnop' onclick='verwijderFunctie(); window.location.reload();' > Verwijderen </button>" 
+ 		      $.each(landen, function(i, country) {
+ 		        table_body += '<tr class="hoverRij"><td>' + country.iso3 + "</td><td>" + country.name + "</td><td>" + country.capital + "</td><td>" + country.region + "</td><td>" + country.surface + "</td><td>" + country.population + "</td><td>" + verwijderKnop + "</td></tr>";
+
+ 		      });
+ 		    
+ 		      $('#countries').html(table_body);
+ 		      
+ 		      $('#countries').on('click', 'tr', function(){
+
+ 		    	  $('#countries').on('click', 'tr', function(){
+ 		     	    $('html, body').animate({
+ 		     	        scrollTop: $(document).height()
+ 		     	    }, 'slow');
+ 	 		        console.log();
+ 	 		        $(this).addClass('selected').siblings().removeClass('selected');
+
+	 	 		    getbyCode($(this).find('td').html());
+
+ 	 		        /*
+ 	 		   		var  Land = countrydao.findByCode(window.iso3);
+ 	 		   		var iso3Input = $(this).find('td').html();
+		    	   	var landKlik=$(this).find('td + td').html();
+		    	   	var hoofdstadKlik=$(this).find('td + td + td').html();
+		    	   	var regioKlik=$(this).find('td + td + td + td').html();
+		    	   	var oppervlakteKlik=$(this).find('td + td + td + td + td').html();
+		    	   	var inwonersKlik=$(this).find('td + td + td + td + td + td').html();
+		    	   	console.log(iso3Input);
+ 	 		        document.getElementById("iso3").value = window.iso3;
+ 	 		        document.getElementById("land").value = landKlik;
+ 	 		    	document.getElementById("hoofdstad").value = hoofdstadKlik;
+ 	 				document.getElementById("regio").value = regioKlik;
+		 	 		document.getElementById("oppervlakte").value = oppervlakteKlik;
+		 	 		document.getElementById("inwoners").value = inwonersKlik;
+		 	 		*/
+ 		     	    return false;
+ 		     		});
+ 	 		
+ 	 		   
+ 		        var index = $(this).index();
+ 		        //if($('#countries').hasClass("active")) {
+ 		          //$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + landen[index-1].lat + "&lon=" + landen[index-1].lng + "&APPID=0c6087f0fb2a9655d4ecb2532c6acba1", function(data){
+ 		        	  
+ 		          });
+
+ 		        });
+
+ 		      });
+ 	
+ 		    
+ 		    function resetCountry() {
+ 		      $('#countries').toggleClass("active");
+ 		    }
+ 		    
+ 		   
+ 
+
+ 	function myFunction() {
+ 		  var input, filter, table, tr, td, i;
+ 		  input = document.getElementById("myInput");
+ 		  filter = input.value.toUpperCase();
+ 		  table = document.getElementById("countries");
+ 		  tr = table.getElementsByTagName("tr");
+
+ 		  for (i = 0; i < tr.length; i++) {
+ 		    td = tr[i].getElementsByTagName("td")[0];
+ 		    if (td) {
+ 		      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+ 		        tr[i].style.display = "";
+ 		      } else {
+ 		        tr[i].style.display = "none";
+ 		      }
+ 		    } 
+ 		  }
+ 		}
+ 	
+ 	function getbyCode(code) {
+		console.log("Get by code");
+
+		var uri = "restservices/countries/" + code;
+		
+		$.ajax(uri, {
+			type: "GET",
+			success: function(result) {
+				console.log("HTML form vullen!");
+				console.log(result);
+				console.log(result.code);
+				document.getElementById("iso2").value = result.code;
+				document.getElementById("iso3").value = result.iso3;
+ 		        document.getElementById("land").value = result.name;
+ 		    	document.getElementById("hoofdstad").value = result.capital;
+ 		    	document.getElementById("continent").value = result.continent;
+ 				document.getElementById("regio").value = result.region;
+	 	 		document.getElementById("oppervlakte").value = result.surface;
+	 	 		document.getElementById("inwoners").value = result.population;
+	 	 		document.getElementById("regeringsvorm").value = result.government;
+	 	 		document.getElementById("longitude").value = result.lng;
+	 	 		document.getElementById("latitude").value = result.lat;
+	 	 		document.getElementById("onafhankelijkheidsjaar").value = result.indepyear;
+	 	 		document.getElementById("levensverwachting").value = result.lifeexpectancy;
+	 	 		document.getElementById("GNP").value = result.GNP;
+	 	 		document.getElementById("GNPOud").value = result.GNPOld;
+	 	 		document.getElementById("lokalenaam").value = result.localname;
+	 	 		document.getElementById("hoofd").value = result.headofstate;
+	 	 	
+
+			},
+			error: function(response) {
+				console.log("Could not get country!");
+			}
+		});
+	}
+ 	
+ 	function verwijderFunctie() {
+ 			var iso3 = $(this).find('td').html();
+ 			console.log(window.iso3 + "@@@@")
+ 			var uri = "restservices/countries/" + window.iso3;
+			$.ajax(uri, {
+				type: "DELETE",
+				data: $("#landInfo").serialize(),
+				success: function(result) {
+					console.log("Country deleted!");
+				},
+				error: function(response) {
+					alert("Log in to delete countries!");
+					console.log("Could not delete country!");
+				}
+			});
+ 	    alert("verwijderd!"); 
+ 	}
+ 	
+	
+ 	function toevoegFunctie() {
+ 		var Iso3Code = $('#inputForm').find('input[name="Iso3Input"]').val();
+ 		var Land = $('#inputForm').find('input[name="landInput"]').val();
+		var Hoofdstad = $('#inputForm').find('input[name="hoofdtadInput"]').val();
+		var Regio = $('#inputForm').find('input[name="regioInput"]').val();
+		var Continent = $('#inputForm').find('input[name="continentInput"]').val();
+		var Oppervlakte = $('#inputForm').find('input[name="oppervlakteInput"]').val();
+		var Onafhankelijkheidsjaar = $('#inputForm').find('input[name="onafhankelijkheidsjaarInput"]').val();
+		var Inwoners = $('#inputForm').find('input[name="inwonersInput"]').val();
+		var Levensverwachting = $('#inputForm').find('input[name="levensverwachtingInput"]').val();
+		var GNP = $('#inputForm').find('input[name="GNPInput"]').val();
+		var GNPOud = $('#inputForm').find('input[name="GNPOudInput"]').val();
+		var lokaleNaam = $('#inputForm').find('input[name="LokaleNaamInput"]').val();
+		var Regeringsvorm = $('#inputForm').find('input[name="RegeringsvormInput"]').val();
+		var hoofdVanLand = $('#inputForm').find('input[name="HoofdInput"]').val();
+		var Latitude = $('#inputForm').find('input[name="LatitudeInput"]').val();
+		var Longitude = $('#inputForm').find('input[name="LongitudeInput"]').val();
+		console.log($("#inputForm").serialize());
+
+ 		alert(Iso3Code + Land + Hoofdstad + Regio + Continent + Oppervlakte + Onafhankelijkheidsjaar + Inwoners + Levensverwachting + GNP + GNPOud + lokaleNaam + Regeringsvorm + hoofdVanLand + Latitude + Longitude)
+ 		var uri = "restservices/countries";
+ 			$.ajax(uri, {
+ 				type: "post",
+ 				data: $("#inputForm").serialize(),
+ 				succes: function() {
+ 					saveCountry(Iso3Code);
+ 					console.log("Country inserted!");
+ 				//},
+ 				//error: function() {
+ 					//alert("Log in to add countries!");
+ 					//console.log("Could not insert country!");
+ 				}
+ 			});
+ 		}
+
+ 	function wijzigFunctie() {
+ 		var uri = "restservices/countries/update";
+ 		console.log($("#landInfo").serialize());
+ 		$.ajax(uri, {
+				type: "post",
+				data: $("#landInfo").serialize(),
+				succes: function() {
+					console.log("Country updated!");
+				},
+				error: function() {
+					console.log("Could not update country!");
+				}
+			});
+ 		alert("gewijzigd!")
+ 	}
+ 	
+ 	function naarBeneden() {
+ 		$('html, body').animate({
+  	        scrollTop: $(document).height()
+  	    }, 'slow');
+ 	}
+ 	</script>
+ </body>
+ 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+ <title>Dynamic Example</title>
+ <body>
+
+ 	<form> 
+ 	<input id="target" type="text" name=test> 
+ 	</form>
+ 	
+ 	 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+ 	 <script>
+  		$("#target").keyup(function(){
+  			window.localStorage.setItem("text", $("#target").val());
+  			console.log(window.localStorage); 
+  		});
+	</script>
+ </body>
+</html>

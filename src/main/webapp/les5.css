@@ -1,0 +1,75 @@
+body {
+	background-color: lightblue;
+}
+label {
+	float: left;
+}
+h1 {
+	color: white;
+	background-color: darkblue;
+}
+tr:hover {
+    background-color: white;
+    cursor: pointer;
+}
+table, th, td {
+    border: 1px solid black;
+}
+@media only screen and (min-width: 750px) {
+	#myLocation{
+    float: left;
+  	width: 25%;`
+  	margin-left: 10px;
+	}
+    #weatherInfo {
+		float: right;
+		width: 74%;`    
+    }
+    #vakantieBestemmingen	{
+    	float: left;
+    	width: 100%	
+    }
+}
+#LandcodeSpan {
+	margin-left: 20px;
+}
+#LandSpan {
+	margin-left: 50px;
+}
+#RegioSpan {
+	margin-left: 45px;
+}
+#StadSpan {
+	margin-left: 55px;
+}
+#PostcodeSpan {
+	margin-left: 25px;
+}
+#LatitudeSpan {
+	margin-left: 30px;
+}
+#LongitudeSpan {
+	margin-left: 18px;
+}
+#IPSpan {
+	margin-left: 70px;
+}
+
+#TemperatuurSpan {
+	margin-left: 70px;
+}
+#LuchtvochtigheidSpan {
+	margin-left: 38px;
+}
+#WindsnelheidSpan {
+	margin-left: 63px;
+}
+#WindrichtingSpan {
+	margin-left: 67px;
+}
+#ZonsopgangSpan {
+	margin-left: 72px;
+}
+#ZonsondergangSpan {
+	margin-left: 52px;
+}
